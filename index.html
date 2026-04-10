@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UFT-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<script>
-		// isto é um comentário de uma linha
-		/*
-		Isto é um comentário maior
-		com múltiplas linhas
-		*/
-		var nome = 'João';
-		console.log(nome); //Mostra no console do navegador
-	</script>
-	
-</head>
-<body>
-</body>
+<html>
+	<head>
+		<!-- biblioteca jquery baixada do site -->
+		
+
+		<!-- Se quiser ser por link externo / pegar de um servidor, segue abaixo em formato de comentário: -->
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'></script>
+	</head>
+	<body>
+		<h1>Teste</h1>
+		
+		<!-- Colocado o script abaixo do "Teste", pois ele só esconde os elementos h1 depois de criados -->
+		<!-- Ou seja, é criado primeiro o h1 e depois feito o script nesta sequência -->
+		<!-- Caso contrário, se colocar o script antes do h1 "Teste" no head, não é ocultado o h1 "Teste" porque o h1 não havia sido criado antes -->
+
+		<!-- Script que oculta elementos h1 e alerta (pequeno pop up na página como aviso) escrito "1" -->
+		<script>
+			alert(1);
+			$('h1').hide();
+		</script>
+	</body>
 </html>

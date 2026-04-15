@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<!-- biblioteca jquery baixada do site -->
+		
+
+		<!-- Se quiser ser por link externo / pegar de um servidor, segue abaixo em formato de comentário: -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	</head>
+	<body>
+
+		<p>Teste</p>
+
+		<div id="flip" style="background-color:  lightblue;">Clique em mim</div>
+		<div id="panel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus alias quisquam omnis, corporis delectus blanditiis pariatur iure iste natus beatae recusandae nesciunt repellat laborum, tenetur culpa illum sequi officiis iusto!</div>
+
+		<script>
+
+			//O texto de #panel não irão aparecer (somente se clicar)
+			$('#panel').hide();
+
+			//Irá fazer com que, ao clicar, o texto de #panel apareça ou desapareça
+			$('#flip').click(function () {
+
+				//Precisa ser slideToggle(), pois se fosse slideDown ou slideUp, só iria realizar uma vez destas ações, independente de clicar ou não mais vezes.
+				$('#panel').slideToggle();
+			})
+
+			// Script que oculta o que está escrito em <p>
+			/*$('p').on('click', function () {
+				$(this).hide();
+			})*/
+
+			//Ou em vários eventos em <p>
+			$('p').on({
+
+				//Ficará cinza se passar mouse por cima
+				mouseenter: function () {
+					$(this).css('background-color', 'lightgray')
+				},
+
+				//Ficará azul se mouse não estiver em cima do texto
+				mouseleave: function () {
+					$(this).css('background-color', 'lightblue')
+				},
+
+				//Ficará amarelo se o mouse estiver clicando no texto
+				click: function () {
+					$(this).css('background-color', 'yellow')
+				}
+			})
+		</script>
+	</body>
+</html>

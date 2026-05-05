@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Biblioteca jQuery do servidor -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+
+    <!-- Parei no minuto: 3:45 -->
+    <script>
+        $(function () {
+
+            //Retorna o elemento e o id do pai de p
+            //Neste caso, será o div #novo_div (pois #meu_div é somente avô)
+            console.log($('p').parent());
+
+            //Se for .parents() (terá os antecessores também - hierarquia de pais):
+            console.log($('p').parents());
+            //Irá retornar 4 elementos:
+            /* 
+            Posição | Elemento
+            0         div #novo_div
+            1         div #meu_div
+            2         body
+            3         html
+            */
+
+            //Se for .parents('div'), irá mostrar somente aqueles que forem divs (e parents de 'p')
+            console.log($('p').parents('div'));
+
+            //Se for .parentsUntil('div'), irá mostrar todos os parents/pais/ancestrais até que se encontre um div
+            //Como p já está dentro de um div, filtra tudo e mostra nada
+            console.log($('p').parentsUntil('div'));
+        });
+    </script>
+</head>
+
+<body>
+    
+    <div id="meu_div">
+        <div id="novo_div">
+            <p>Oi</p>
+        </div>
+    </div>
+
+</body>
+</html>

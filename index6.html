@@ -8,7 +8,6 @@
     <!-- Biblioteca jQuery do servidor -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
 
-    <!-- Parei no minuto: 3:45 -->
     <script>
         $(function () {
 
@@ -33,6 +32,11 @@
             //Se for .parentsUntil('div'), irá mostrar todos os parents/pais/ancestrais até que se encontre um div
             //Como p já está dentro de um div, filtra tudo e mostra nada
             console.log($('p').parentsUntil('div'));
+            
+            //Se for até 'body', irá retornar os dois parents: div (#novo_div) e div (#meu_div).
+            console.log($('p').parentsUntil('body'));
+
+            //Quando o usuário clicar em um campo, que possam ficar destacados (objetivo desta aula).
         });
     </script>
 </head>

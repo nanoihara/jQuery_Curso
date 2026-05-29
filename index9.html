@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Biblioteca jQuery do servidor -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+
+    <script>
+        $(function () {
+            // Para aparecer/mostrar o resultado, precisa colocar:
+            // console.log -> para mostrar no terminal
+
+            // Em last(), ele pegará somene o último elemento.
+            console.log($('p').last());
+
+            // Mostrará todos os "p" no terminal
+            console.log($('p'));
+            
+            // Irá mostrar o "p" com índice 0 (o primeiro p).
+            // Se escolher um índice que não tenha, irá retornar = 0.
+            console.log($('p').eq(0));
+
+            // Retorna somente os "p" que tem a classe intro
+            // Caso escolher uma classe que não tenha, irá retornar = 0.
+            console.log($('p').filter('.intro'));
+
+            // Retorna todos os "p" que NÃO tenham a classe intro
+            console.log($('p').not('.intro'));
+        });
+    </script>
+</head>
+
+<body>
+    
+    <div id="meu_div">
+        <p id="p0">1</p>
+        <p id="p1">2</p>
+        <p id="p2" class="intro">3</p>
+        <p id="p3">4</p>
+    </div>
+
+</body>
+</html>
